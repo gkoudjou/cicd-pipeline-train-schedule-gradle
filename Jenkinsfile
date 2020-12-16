@@ -11,5 +11,11 @@ pipeline {
       }
     }
   }
+  
+  post {
+    success {
+        archiveArtifacts artifacts: 'dist/*.zip', fingerprint: true
+    }
+  }
 
 }
